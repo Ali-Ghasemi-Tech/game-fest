@@ -1,0 +1,40 @@
+a:hover{
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+#navbar{
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 3vw;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(114, 51, 160);
+    color: white;
+    font-size: clamp(0.5em , 2vw , 1.5em);
+}
+#nav-right{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 3vw;
+    align-items: center;
+    width: auto;
+}
+#link-list{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1vw;
+    padding:0;
+    color: white;
+    
+}
+#nav-left{
+    width: 4vw;
+}
