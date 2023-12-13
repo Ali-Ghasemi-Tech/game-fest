@@ -1,40 +1,76 @@
-a:hover{
-    cursor: pointer;
+a:hover {
+  cursor: pointer;
 }
-a{
-    text-decoration: none;
-    color: white;
+a {
+  text-decoration: none;
+  color: white;
 }
-#navbar{
-    height: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 0 3vw;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(114, 51, 160);
-    color: white;
-    font-size: clamp(0.5em , 2vw , 1.5em);
+#navbar {
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 3vw;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  background-color: gray;
+  color: white;
+  font-size: clamp(0.5em, 2vw, 1.5em);
 }
-#nav-right{
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 3vw;
-    align-items: center;
-    width: auto;
+#nav-right {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 2vw;
+  align-items: center;
+  width: auto;
 }
-#link-list{
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 1vw;
-    padding:0;
-    color: white;
-    
+#link-list {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1vw;
+  padding: 0;
+  color: white;
 }
-#nav-left{
-    width: 4vw;
+#nav-left {
+  width: 4vw;
+}
+.drop-down {
+  display: flex;
+  flex-direction: row;
+}
+.dropdown-button {
+  background: none;
+  color: white;
+  font-size: inherit;
+  border: none;
+}
+.dropdown.active > .dropdown-button,
+.dropdown-button:hover {
+  color: black;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  position: absolute;
+  left: 0.4rem;
+  top: calc(100% + 1rem);
+  background-color: white;
+  color: gray;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in, transform 150ms ease-in;
+}
+.dropdown.active > .dropdown-button + .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
