@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../style/dropdown.css";
 
 const Dropdown = ({ category, catElement }) => {
   const [isDropdownActive, setIsDropdownActive] = useState(false);

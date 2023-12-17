@@ -1,0 +1,9 @@
+.home {
+  height: 1000px;
+  width: 1000px;
+  background-color: black;
+  position: fixed;
+  top: 100px;
+  left: 0px;
+  right: 0px;
+}

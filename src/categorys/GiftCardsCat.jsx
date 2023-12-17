@@ -1,21 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const GiftCardsCat = () => {
   return (
     <>
       <div className="category">
-        <a className="sub-category">PC</a>
-        <a>Steam</a>
-        <a>Origins</a>
+        <Link to="/gift-cards/pc" className="sub-category">
+          PC
+        </Link>
+        <Link to="/gift-cards/pc/steam">Steam</Link>
+        <Link to="/gift-cards/pc/origin">Origin</Link>
       </div>
       <div className="category">
-        <a className="sub-category" href="">
-          {" "}
-          Console{" "}
-        </a>
-        <a href="">Play Station</a>
-        <a href="">Xbox</a>
-        <a href="">Nintendo</a>
+        <Link to="/gift-cards/console" className="sub-category">
+          Console
+        </Link>
+        <Link to="/gift-cards/console/playstation">Play Station</Link>
+        <Link to="/gift-cards/console/xbox">Xbox</Link>
+        <Link to="/gift-cards/console/nintendo">Nintendo</Link>
       </div>
     </>
   );

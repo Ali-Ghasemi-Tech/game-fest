@@ -3,6 +3,7 @@ import { ReactComponent as Cart } from "../media/cart.svg";
 import Dropdown from "./Dropdown";
 import GiftCardsCat from "../categorys/GiftCardsCat";
 import AccessoriesCat from "../categorys/AccessoriesCat";
+import { Outlet } from "react-router-dom";
 
 const Navbar = () => {
   return (
