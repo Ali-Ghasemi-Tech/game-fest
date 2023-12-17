@@ -8,7 +8,19 @@ const Dropdown = ({ category }) => {
   }
 
   function handleDocumentClick(e) {
-    if (e.target.id !== category) {
+    const dropdown = document.getElementById("dropdown");
+    const dropdownMenu = document.getElementById(category + "menu");
+
+    if (
+      e.target.id === category ||
+      e.target.closest(category + "-") === dropdown ||
+      dropdownMenu.contains(e.target)
+    ) {
+      return;
+    } else if (
+      e.target.id !== category ||
+      e.target.closest(category + "-") !== dropdown
+    ) {
       setIsDropdownActive(false);
     }
   }
@@ -23,7 +35,8 @@ const Dropdown = ({ category }) => {
 
   return (
     <div
-      data-dropdown
+      id="dropdown"
+      data-dropdown={category + "-"}
       className={`dropdown ${isDropdownActive ? "active" : ""}`}
     >
       <button
@@ -33,7 +46,7 @@ const Dropdown = ({ category }) => {
       >
         {category === "giftCards" ? "Gift cards" : "Accessories"}
       </button>
-      <div className="dropdown-menu">
+      <div id={category + "menu"} className="dropdown-menu">
         <div className="pc-gifts">
           <a className="pc-cat">PC</a>
           <a>Steam</a>
