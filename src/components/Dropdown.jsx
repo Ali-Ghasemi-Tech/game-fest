@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Dropdown = ({ category }) => {
+const Dropdown = ({ category, catElement }) => {
   const [isDropdownActive, setIsDropdownActive] = useState(false);
 
   function handleButtonClick() {
@@ -47,19 +47,7 @@ const Dropdown = ({ category }) => {
         {category === "giftCards" ? "Gift cards" : "Accessories"}
       </button>
       <div id={category + "menu"} className="dropdown-menu">
-        <div className="pc-gifts">
-          <a className="pc-cat">PC</a>
-          <a>Steam</a>
-          <a>Origins</a>
-        </div>
-        <div className="console-gifts">
-          <a className="console-cat" href="">
-            Console
-          </a>
-          <a href="">Play Station</a>
-          <a href="">Xbox</a>
-          <a href="">Nintendo</a>
-        </div>
+        {catElement}
       </div>
     </div>
   );

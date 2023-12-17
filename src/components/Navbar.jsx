@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
 import "../style/navbar.css";
 import { ReactComponent as Cart } from "../media/cart.svg";
 import Dropdown from "./Dropdown";
+import GiftCardsCat from "../categorys/GiftCardsCat";
+import AccessoriesCat from "../categorys/AccessoriesCat";
 
 const Navbar = () => {
   return (
@@ -9,8 +10,8 @@ const Navbar = () => {
       <div id="nav-right">
         <span id="shop-title">Game Fest Shop</span>
         <div id="link-list">
-          <Dropdown category={"giftCards"} />
-          <Dropdown category={"accessories"} />
+          <Dropdown catElement={<GiftCardsCat />} category={"giftCards"} />
+          <Dropdown catElement={<AccessoriesCat />} category={"accessories"} />
           <a href="">Contact us</a>
         </div>
       </div>

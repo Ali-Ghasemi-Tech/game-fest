@@ -76,27 +76,23 @@ a {
   transform: translateY(0);
   pointer-events: auto;
 }
-.pc-gifts,
-.console-gifts {
+.category {
   display: flex;
   flex-direction: column;
   gap: 0.5vw;
 }
 
-.pc-gifts > a,
-.console-gifts > a {
+.category > a {
   color: gray;
   padding-left: 0.2em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: clip;
 }
-.pc-gifts > a:hover,
-.console-gifts > a:hover {
+.category > a:hover {
   color: black;
 }
-.pc-gifts > .pc-cat,
-.console-gifts > .console-cat {
+.category > .sub-category {
   padding-left: 0px;
   font-weight: bold;
 }
