@@ -1,0 +1,15 @@
+.page-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 3vw;
+  height: 400px;
+  margin-top: 5vw;
+}
+.product-layout {
+  direction: rtl;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 3vw;
+  margin-left: 5vw;
+}

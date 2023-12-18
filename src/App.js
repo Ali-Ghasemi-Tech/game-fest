@@ -8,7 +8,6 @@ function App() {
     <BrowserRouter basename="game-fest">
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
           <Route path="/gift-cards">
             <Route path="pc" element={<Home />}>
               <Route path="steam" element={<Home />} />
