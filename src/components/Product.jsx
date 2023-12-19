@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../style/product.css";
 
-const Product = () => {
+const Product = ({ products }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [productAmount, setProductAmount] = useState(0);
-  const products = {
-    img: "https://m.media-amazon.com/images/I/81JXr-AQJQL._AC_SY741_.jpg",
-    name: "steam gift card 20$",
-    price: 50000,
-    id: "steam",
-  };
   function handleClick(e) {
     if (e.target.getAttribute("product-button") === `${products.id}`) {
       setIsClicked(true);
@@ -17,11 +11,16 @@ const Product = () => {
     }
   }
   function updateAmount(e) {
-    console.log(e.target.textContent);
-    if (e.target.textContent === "-") {
-      setProductAmount(productAmount - 1);
-    } else if (e.target.textContent === "+") {
-      setProductAmount(productAmount + 1);
+    if (
+      e.target.getAttribute("product-button") ===
+      `${products.id + "-controller"}`
+    ) {
+      console.log(e.target.textContent);
+      if (e.target.textContent === "-") {
+        setProductAmount(productAmount - 1);
+      } else if (e.target.textContent === "+") {
+        setProductAmount(productAmount + 1);
+      }
     }
   }
 
@@ -45,15 +44,15 @@ const Product = () => {
       </div>
       <div>
         <button
-          product-button="steam"
+          product-button={products.id}
           className={`${isClicked ? "hide" : "add-button"}`}
         >
           Add to cart
         </button>
         <div className={`${isClicked ? "product-amount-control" : "hide"}`}>
-          <button>+</button>
+          <button product-button={products.id + "-controller"}>+</button>
           <span>{productAmount}</span>
-          <button>-</button>
+          <button product-button={products.id + "-controller"}>-</button>
         </div>
       </div>
     </div>
