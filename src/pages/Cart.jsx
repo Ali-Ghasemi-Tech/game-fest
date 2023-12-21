@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import StateContext from "../../src/stateContext";
 import { ReactComponent as Plus } from "../media/plus.svg";
 import { ReactComponent as Minus } from "../media/minus.svg";
 import steamProducts from "../products-object/steamProducts";
