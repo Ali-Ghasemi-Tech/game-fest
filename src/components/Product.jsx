@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../style/product.css";
 
-const Product = ({ prop, click }) => {
-  const [isClicked, setIsClicked] = useState(false);
-  const [productAmount, setProductAmount] = useState(0);
+const Product = ({ prop, click, controller }) => {
+  console.log(prop.amount);
 
   function handleClick(e) {
     if (e.target.getAttribute("product-button") === `${prop.id}`) {
       click(prop.id);
-      setIsClicked(true);
-      setProductAmount(productAmount + 1);
     }
   }
   function updateAmount(e) {
@@ -18,9 +15,9 @@ const Product = ({ prop, click }) => {
     ) {
       console.log(e.target.textContent);
       if (e.target.textContent === "-") {
-        setProductAmount(productAmount - 1);
+        controller(prop.id, prop.amount - 1);
       } else if (e.target.textContent === "+") {
-        setProductAmount(productAmount + 1);
+        controller(prop.id, prop.amount + 1);
       }
     }
   }
@@ -28,13 +25,12 @@ const Product = ({ prop, click }) => {
   useEffect(() => {
     document.addEventListener("click", handleClick);
     document.addEventListener("click", updateAmount);
-    if (productAmount === 0) setIsClicked(false);
 
     return () => {
       document.removeEventListener("click", handleClick);
       document.removeEventListener("click", updateAmount);
     };
-  }, [productAmount]);
+  }, [prop.amount]);
 
   return (
     <div className="product-container">
@@ -54,7 +50,7 @@ const Product = ({ prop, click }) => {
           className={`${prop.isClicked ? "product-amount-control" : "hide"}`}
         >
           <button product-button={prop.id + "-controller"}>+</button>
-          <span>{productAmount}</span>
+          <span>{prop.amount}</span>
           <button product-button={prop.id + "-controller"}>-</button>
         </div>
       </div>

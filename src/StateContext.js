@@ -6,16 +6,26 @@ const StateContext = createContext();
 export const StateProvider = ({ children }) => {
   const [data, setData] = useState(steamProducts);
 
-  const toggleClick = (id) => {
+  function toggleClick(id) {
     setData((prevData) =>
       prevData.map((product) =>
         product.id === id ? { ...product, isClicked: true, amount: 1 } : product
       )
     );
-  };
+  }
+
+  function controlAmount(id, checkIsClicked, newAmount) {
+    setData((prevData) =>
+      prevData.map((product) =>
+        product.id === id
+          ? { ...product, isClicked: checkIsClicked, amount: newAmount }
+          : product
+      )
+    );
+  }
 
   return (
-    <StateContext.Provider value={{ data, toggleClick }}>
+    <StateContext.Provider value={{ data, toggleClick, controlAmount }}>
       {children}
     </StateContext.Provider>
   );
