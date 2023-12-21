@@ -2,14 +2,18 @@ import React from "react";
 import { BrowserRouter, Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
+import Cart from "./pages/Cart";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <BrowserRouter basename="game-fest">
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Navbar />}>
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/gift-cards">
-            <Route path="pc" element={<Home />}>
+            <Route path="pc">
               <Route path="steam" element={<Home />} />
               <Route path="origin" element={<Home />} />
             </Route>

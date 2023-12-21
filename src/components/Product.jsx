@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../style/product.css";
 
 const Product = ({ products }) => {
+  console.log(products);
+  console.log("product render");
   const [isClicked, setIsClicked] = useState(false);
   const [productAmount, setProductAmount] = useState(0);
   function handleClick(e) {

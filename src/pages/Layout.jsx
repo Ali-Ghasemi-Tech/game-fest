@@ -4,25 +4,19 @@ import Home from "./Home";
 import { Outlet } from "react-router-dom";
 import "../style/layout.css";
 import Product from "../components/Product";
-import Steam from "../products-object/steamProducts.js";
 
-const Layout = () => {
+const Layout = ({ productArray }) => {
+  console.log(productArray);
   return (
     <>
-      <Navbar />
       <div className="page-layout">
         <div className="product-layout">
-          <Product products={Steam[0]} />
-          <Product products={Steam[1]} />
-          <Product products={Steam[2]} />
-          <Product products={Steam[3]} />
+          {productArray.map((product, index) => (
+            <Product key={index} products={product} />
+          ))}
         </div>
-        <div className="filter-container">
-          <Home />
-        </div>
+        <div className="filter-container"></div>
       </div>
-
-      <Outlet />
     </>
   );
 };

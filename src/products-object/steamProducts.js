@@ -1,4 +1,4 @@
-export const steam = [
+export const steamProducts = [
   {
     img: "https://m.media-amazon.com/images/I/81JXr-AQJQL._AC_SY741_.jpg",
     name: "steam gift card 20$",
@@ -29,4 +29,4 @@ export const steam = [
   },
 ];
 
-export default steam;
+export default steamProducts;

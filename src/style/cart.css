@@ -1,0 +1,42 @@
+.cart-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 6vw;
+  row-gap: 2vw;
+}
+.cart {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-left {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+}
+.cart-left > img {
+  width: 5vw;
+}
+.cart-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  row-gap: 1vw;
+}
+.cart-info > span {
+  font-family: sans-serif;
+
+  font-size: clamp(0.8rem, 2vw, 1.5rem);
+}
+
+.cart-info > span:first-child {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: clamp(0.8rem, 2vw, 2rem);
+}
