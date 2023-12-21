@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../style/product.css";
+import { ReactComponent as Plus } from "../media/plus.svg";
+import { ReactComponent as Minus } from "../media/minus.svg";
 
 const Product = ({ prop, click, controller }) => {
-  console.log(prop.amount);
-
   function handleClick(e) {
     if (e.target.getAttribute("product-button") === `${prop.id}`) {
       click(prop.id);
@@ -13,10 +13,9 @@ const Product = ({ prop, click, controller }) => {
     if (
       e.target.getAttribute("product-button") === `${prop.id + "-controller"}`
     ) {
-      console.log(e.target.textContent);
-      if (e.target.textContent === "-") {
+      if (e.target.id === "minus") {
         controller(prop.id, prop.amount - 1);
-      } else if (e.target.textContent === "+") {
+      } else if (e.target.id === "plus") {
         controller(prop.id, prop.amount + 1);
       }
     }
@@ -49,9 +48,21 @@ const Product = ({ prop, click, controller }) => {
         <div
           className={`${prop.isClicked ? "product-amount-control" : "hide"}`}
         >
-          <button product-button={prop.id + "-controller"}>+</button>
+          <button id="plus" product-button={prop.id + "-controller"}>
+            <Plus
+              product-button={prop.id + "-controller"}
+              className="controller-button"
+              id="plus"
+            />
+          </button>
           <span>{prop.amount}</span>
-          <button product-button={prop.id + "-controller"}>-</button>
+          <button id="minus" product-button={prop.id + "-controller"}>
+            <Minus
+              product-button={prop.id + "-controller"}
+              className="controller-button"
+              id="minus"
+            />
+          </button>
         </div>
       </div>
     </div>

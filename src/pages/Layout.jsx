@@ -10,13 +10,13 @@ const Layout = () => {
     toggleClick(id);
   }
   function handleControl(id, newAmount) {
-    newAmount === 0
+    newAmount <= 0
       ? controlAmount(id, false, 0)
       : controlAmount(id, true, newAmount);
   }
-  // useEffect(() => {
-  //   console.log("render");
-  // }, data);
+  useEffect(() => {
+    console.log("render");
+  }, []);
   return (
     <>
       <div className="page-layout">
