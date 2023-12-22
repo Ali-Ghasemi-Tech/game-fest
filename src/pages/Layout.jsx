@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useContext } from "react";
-import { useStateContext } from "../StateContext";
+import { StateProvider, useStateContext } from "../StateContext";
 import "../style/layout.css";
 import Product from "../components/Product";
 

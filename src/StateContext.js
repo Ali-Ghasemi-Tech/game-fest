@@ -1,11 +1,11 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import steamProducts from "./products-object/steamProducts"; // Adjust the path accordingly
 
 const StateContext = createContext();
 
-export const StateProvider = ({ children }) => {
-  const [data, setData] = useState(steamProducts);
-
+export const StateProvider = ({ children, productList }) => {
+  const [data, setData] = useState([]);
+  console.log(data);
   function toggleClick(id) {
     setData((prevData) =>
       prevData.map((product) =>
@@ -23,6 +23,9 @@ export const StateProvider = ({ children }) => {
       )
     );
   }
+  useEffect(() => {
+    setData(productList);
+  }, [productList]);
 
   return (
     <StateContext.Provider value={{ data, toggleClick, controlAmount }}>
