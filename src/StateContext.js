@@ -1,10 +1,9 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import steamProducts from "./products-object/steamProducts"; // Adjust the path accordingly
-
 const StateContext = createContext();
 
 export const StateProvider = ({ children, productList }) => {
   const [data, setData] = useState([]);
+  console.log("state runs");
 
   function toggleClick(id) {
     setData((prevData) =>

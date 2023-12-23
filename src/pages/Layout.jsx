@@ -5,6 +5,7 @@ import "../style/layout.css";
 import Product from "../components/Product";
 
 const Layout = ({ cat }) => {
+  console.log("layout runs");
   const { data, toggleClick, controlAmount } = useStateContext();
   function handleClick(id) {
     toggleClick(id);

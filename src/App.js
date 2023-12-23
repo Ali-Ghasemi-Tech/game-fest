@@ -9,15 +9,14 @@ import steamProducts from "./products-object/steamProducts";
 import originProducts from "./products-object/originProducts";
 
 function App() {
+  console.log("app runs");
   const [productList, setProductList] = useState([]);
+
   function setList(list) {
     setProductList(list);
+    console.log("this is list");
+    console.log(list);
   }
-  useEffect(() => {
-    setTimeout(() => {
-      setList(productList);
-    }, 0);
-  }, [productList]);
 
   return (
     <StateProvider productList={productList}>
@@ -33,7 +32,7 @@ function App() {
                   element={
                     <Home
                       cat="steam"
-                      productList={setList}
+                      selectList={setList}
                       object={steamProducts}
                     />
                   }
@@ -43,7 +42,7 @@ function App() {
                   element={
                     <Home
                       cat="origin"
-                      productList={setList}
+                      selectList={setList}
                       object={originProducts}
                     />
                   }
