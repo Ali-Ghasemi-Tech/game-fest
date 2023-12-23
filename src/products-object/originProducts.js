@@ -9,7 +9,7 @@ export const originProducts = [
     amount: 0,
   },
   {
-    img: "https://static.wixstatic.com/media/8b1449_6fe3da24…o/8b1449_6fe3da249170480c80b5415f5da93020~mv2.png",
+    img: "https://static.wixstatic.com/media/8b1449_6fe3da249170480c80b5415f5da93020~mv2.png/v1/fill/w_472,h_667,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/8b1449_6fe3da249170480c80b5415f5da93020~mv2.png",
     name: "origin gift card 20$",
     price: 130000,
     id: "origin-20",
@@ -18,7 +18,7 @@ export const originProducts = [
     amount: 0,
   },
   {
-    img: "https://cdn.geekay.com/media/catalog/product/cache/f16f349b720da0a7b8b90d96299b4477/e/a/ea-25.jpg",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ80kiRtcRAJqse5Ha03XVnoV3-0rLaBQgnfb90h9oJV7AsDWpPIRL7OTINWG0zqDYb3pQ&usqp=CAU",
     name: "origin gift card 25$",
     price: 150000,
     id: "origin-25",

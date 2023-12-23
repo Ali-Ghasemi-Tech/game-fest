@@ -10,7 +10,6 @@ import originProducts from "./products-object/originProducts";
 
 function App() {
   const [productList, setProductList] = useState([]);
-  console.log(productList);
   function setList(list) {
     setProductList(list);
   }
@@ -32,13 +31,21 @@ function App() {
                 <Route
                   path="steam"
                   element={
-                    <Home productList={setList} object={steamProducts} />
+                    <Home
+                      cat="steam"
+                      productList={setList}
+                      object={steamProducts}
+                    />
                   }
                 />
                 <Route
                   path="origin"
                   element={
-                    <Home productList={setList} object={originProducts} />
+                    <Home
+                      cat="origin"
+                      productList={setList}
+                      object={originProducts}
+                    />
                   }
                 />
               </Route>

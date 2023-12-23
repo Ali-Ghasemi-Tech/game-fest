@@ -5,7 +5,7 @@ const StateContext = createContext();
 
 export const StateProvider = ({ children, productList }) => {
   const [data, setData] = useState([]);
-  console.log(data);
+
   function toggleClick(id) {
     setData((prevData) =>
       prevData.map((product) =>
@@ -23,8 +23,21 @@ export const StateProvider = ({ children, productList }) => {
       )
     );
   }
+  console.log(data);
+  function mergeArray() {
+    setData(data.concat(productList));
+  }
+
   useEffect(() => {
-    setData(productList);
+    if (data.length !== 0) {
+      const isArrayCat = data.every((product) => {
+        console.log(product.cat);
+        return productList[0].cat !== product.cat;
+      });
+      if (isArrayCat) mergeArray();
+    } else {
+      setData(productList);
+    }
   }, [productList]);
 
   return (

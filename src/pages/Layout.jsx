@@ -4,7 +4,7 @@ import { StateProvider, useStateContext } from "../StateContext";
 import "../style/layout.css";
 import Product from "../components/Product";
 
-const Layout = () => {
+const Layout = ({ cat }) => {
   const { data, toggleClick, controlAmount } = useStateContext();
   function handleClick(id) {
     toggleClick(id);
@@ -14,21 +14,21 @@ const Layout = () => {
       ? controlAmount(id, false, 0)
       : controlAmount(id, true, newAmount);
   }
-  useEffect(() => {
-    console.log("render");
-  }, []);
+
   return (
     <>
       <div className="page-layout">
         <div className="product-layout">
-          {data.map((product, index) => (
-            <Product
-              key={index}
-              prop={product}
-              click={handleClick}
-              controller={handleControl}
-            />
-          ))}
+          {data.map((product, index) =>
+            product.cat === cat ? (
+              <Product
+                key={index}
+                prop={product}
+                click={handleClick}
+                controller={handleControl}
+              />
+            ) : null
+          )}
         </div>
         <div className="filter-container"></div>
       </div>
