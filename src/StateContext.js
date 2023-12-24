@@ -5,6 +5,7 @@ const StateContext = createContext();
 export const StateProvider = ({ children, productList }) => {
   const [data, setData] = useState([]);
   const [totalProduct, setTotalProduct] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   function toggleClick(id) {
     setData((prevData) =>
@@ -33,6 +34,15 @@ export const StateProvider = ({ children, productList }) => {
     setTotalProduct(total);
   }
 
+  function controlTotalPrice() {
+    let total = 0;
+    const prices = data.map((product) => product.amount * product.price);
+    prices.forEach((price) => {
+      total += price;
+    });
+    setTotalPrice(total);
+  }
+
   function mergeArray() {
     setData(data.concat(productList));
   }
@@ -47,11 +57,12 @@ export const StateProvider = ({ children, productList }) => {
       setData(productList);
     }
     controlTotalAmount();
+    controlTotalPrice();
   }, [productList, data]);
 
   return (
     <StateContext.Provider
-      value={{ data, toggleClick, controlAmount, totalProduct }}
+      value={{ data, toggleClick, controlAmount, totalProduct, totalPrice }}
     >
       {children}
     </StateContext.Provider>

@@ -49,3 +49,8 @@
   width: 20%;
   direction: rtl;
 }
+.price-section {
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+}

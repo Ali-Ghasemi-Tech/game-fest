@@ -6,7 +6,7 @@ import "../style/product.css";
 import { useStateContext } from "../StateContext";
 
 const Cart = () => {
-  const { data, controlAmount } = useStateContext();
+  const { data, controlAmount, totalPrice } = useStateContext();
 
   useEffect(() => {}, [data]);
   return (
@@ -55,6 +55,10 @@ const Cart = () => {
           </div>
         </div>
       ))}
+      <div className={totalPrice === 0 ? "hide" : "price-section"}>
+        <span>Total Price:</span>
+        <span>{totalPrice.toLocaleString()}</span>
+      </div>
     </div>
   );
 };
