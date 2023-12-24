@@ -7,12 +7,8 @@ import { useStateContext } from "../StateContext";
 
 const Cart = () => {
   const { data, controlAmount } = useStateContext();
-  console.log("cart");
-  console.log(data);
 
-  useEffect(() => {
-    data.map((product) => console.log(typeof product));
-  }, [data]);
+  useEffect(() => {}, [data]);
   return (
     <div className="cart-page">
       {data.map((product, index) => (

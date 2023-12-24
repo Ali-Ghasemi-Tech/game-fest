@@ -1,9 +1,10 @@
+import { toHaveAccessibleDescription } from "@testing-library/jest-dom/matchers";
 import React, { createContext, useContext, useEffect, useState } from "react";
 const StateContext = createContext();
 
 export const StateProvider = ({ children, productList }) => {
   const [data, setData] = useState([]);
-  console.log("state runs");
+  const [totalProduct, setTotalProduct] = useState(0);
 
   function toggleClick(id) {
     setData((prevData) =>
@@ -22,7 +23,16 @@ export const StateProvider = ({ children, productList }) => {
       )
     );
   }
-  console.log(data);
+
+  function controlTotalAmount() {
+    let total = 0;
+    const amounts = data.map((product) => product.amount);
+    amounts.forEach((amount) => {
+      total += amount;
+    });
+    setTotalProduct(total);
+  }
+
   function mergeArray() {
     setData(data.concat(productList));
   }
@@ -30,17 +40,19 @@ export const StateProvider = ({ children, productList }) => {
   useEffect(() => {
     if (data.length !== 0) {
       const isArrayCat = data.every((product) => {
-        console.log(product.cat);
         return productList[0].cat !== product.cat;
       });
       if (isArrayCat) mergeArray();
     } else {
       setData(productList);
     }
-  }, [productList]);
+    controlTotalAmount();
+  }, [productList, data]);
 
   return (
-    <StateContext.Provider value={{ data, toggleClick, controlAmount }}>
+    <StateContext.Provider
+      value={{ data, toggleClick, controlAmount, totalProduct }}
+    >
       {children}
     </StateContext.Provider>
   );

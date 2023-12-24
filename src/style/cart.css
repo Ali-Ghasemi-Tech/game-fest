@@ -47,4 +47,5 @@
 }
 .cart-controller-container {
   width: 20%;
+  direction: rtl;
 }

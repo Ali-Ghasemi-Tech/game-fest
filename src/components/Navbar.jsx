@@ -5,8 +5,15 @@ import GiftCardsCat from "../categorys/GiftCardsCat";
 import AccessoriesCat from "../categorys/AccessoriesCat";
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useStateContext } from "../StateContext";
 
 const Navbar = () => {
+  const { totalProduct } = useStateContext();
+  const [cartNumber, setCartNumber] = useState(0);
+  useEffect(() => {
+    setCartNumber(totalProduct);
+  }, [totalProduct]);
   return (
     <>
       <div id="navbar" className="">
@@ -25,7 +32,16 @@ const Navbar = () => {
         </div>
         <div id="nav-left">
           <Link to="/cart" id="cart">
-            <Cart style={{ fill: "white", width: "auto", padding: "1vw" }} />
+            <Cart
+              className="cart-icon"
+              style={{
+                fill: "white",
+                width: "auto",
+                padding: "1vw",
+                zIndex: "20",
+              }}
+            />
+            <div className="cart-number">{cartNumber}</div>
           </Link>
         </div>
       </div>
