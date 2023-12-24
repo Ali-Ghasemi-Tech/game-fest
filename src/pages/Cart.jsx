@@ -8,11 +8,10 @@ import { useStateContext } from "../StateContext";
 const Cart = () => {
   const { data, controlAmount, totalPrice } = useStateContext();
 
-  useEffect(() => {}, [data]);
   return (
     <div className="cart-page">
       {data.map((product, index) => (
-        <div key={index} className={product.amount === 0 ? "hide " : "cart"}>
+        <div key={index} className={product.amount === 0 ? "hide" : "cart"}>
           <div className="cart-left">
             <img src={product.img} alt={product.name} />
             <div className="cart-info">
@@ -39,13 +38,17 @@ const Cart = () => {
               </button>
               <span>{product.amount}</span>
               <button
-                onClick={() =>
-                  controlAmount(
-                    product.id,
-                    product.isClicked,
-                    product.amount - 1
-                  )
-                }
+                onClick={function () {
+                  if (product.amount === 1) {
+                    controlAmount(product.id, false, 0);
+                  } else {
+                    controlAmount(
+                      product.id,
+                      product.isClicked,
+                      product.amount - 1
+                    );
+                  }
+                }}
                 id="minus"
                 product-button={product.id + "-controller"}
               >

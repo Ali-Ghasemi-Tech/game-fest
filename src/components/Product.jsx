@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import "../style/product.css";
 import { ReactComponent as Plus } from "../media/plus.svg";
 import { ReactComponent as Minus } from "../media/minus.svg";
+import { useStateContext } from "../StateContext";
 
 const Product = ({ prop, click, controller }) => {
+  const { toggleClick } = useStateContext();
   function handleClick(e) {
     if (e.target.getAttribute("product-button") === `${prop.id}`) {
       click(prop.id);
@@ -29,7 +31,7 @@ const Product = ({ prop, click, controller }) => {
       document.removeEventListener("click", handleClick);
       document.removeEventListener("click", updateAmount);
     };
-  }, [prop.amount]);
+  }, [prop.amount, toggleClick]);
 
   return (
     <div className="product-container">
