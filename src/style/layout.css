@@ -2,8 +2,9 @@
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 3vw;
-  height: 400px;
+  height: fit-content;
   margin-top: 5vw;
+  align-items: start;
 }
 .product-layout {
   direction: rtl;
@@ -12,4 +13,12 @@
   grid-auto-rows: 1fr;
   gap: 3vw;
   margin-left: 5vw;
+}
+.filter-container {
+  width: 80%;
+  height: 200%;
+  background-color: rgb(241, 241, 241);
+  padding: 1vw;
+  border: 0.1vw solid black;
+  border-radius: 15px;
 }

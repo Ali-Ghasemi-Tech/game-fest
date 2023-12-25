@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { StateProvider, useStateContext } from "../StateContext";
 import "../style/layout.css";
 import Product from "../components/Product";
+import Filter from "../components/Filter";
 
 const Layout = ({ cat }) => {
   const { data, toggleClick, controlAmount } = useStateContext();
@@ -30,7 +31,9 @@ const Layout = ({ cat }) => {
             ) : null
           )}
         </div>
-        <div className="filter-container"></div>
+        <div className="filter-container">
+          <Filter />
+        </div>
       </div>
     </>
   );
