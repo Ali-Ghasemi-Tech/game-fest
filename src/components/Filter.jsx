@@ -1,5 +1,6 @@
 import React from "react";
 import "../style/filter.css";
+import Slider from "./Slider";
 
 const Filter = () => {
   return (
@@ -91,6 +92,7 @@ const Filter = () => {
           <span className="checkbox"></span>
           <span className="text">Console</span>
         </label>
+        <Slider />
       </div>
     </>
   );

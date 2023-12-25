@@ -54,7 +54,6 @@
 }
 .text {
   font-size: clamp(0.5em, 1.2vw, 1.5em);
-  cursor: pointer;
 }
 h2 {
   margin-bottom: 0;
