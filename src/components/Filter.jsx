@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../style/filter.css";
 import Slider from "./Slider";
 
 const Filter = () => {
+  const [label, setLabel] = useState("all");
+  console.log(label);
+  function handleFilter(e) {
+    const labelElement = e.closest(".sidebar-label");
+    const textElement = labelElement.querySelector(".text");
+    const filterText = textElement.innerText.toLowerCase();
+    setLabel(filterText);
+  }
+  useEffect(() => {
+    const clickCheck = document.querySelectorAll(".filter-content");
+    clickCheck.forEach((element) => {
+      element.addEventListener("click", (e) => handleFilter(e.target));
+    });
+
+    return clickCheck.forEach((element) => {
+      element.removeEventListener("click", (e) => handleFilter(e.target));
+    });
+  }, []);
   return (
     <>
       {/*  */}
