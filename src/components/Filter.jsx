@@ -4,7 +4,6 @@ import Slider from "./Slider";
 
 const Filter = ({ prop }) => {
   const [label, setLabel] = useState("all");
-  console.log(label);
   function handleLabel(e) {
     if (e.closest(".sidebar-label")) {
       const labelElement = e.closest(".sidebar-label");

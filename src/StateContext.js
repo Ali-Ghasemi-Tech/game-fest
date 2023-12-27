@@ -6,6 +6,7 @@ export const StateProvider = ({ children, productList }) => {
   const [data, setData] = useState([]);
   const [totalProduct, setTotalProduct] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+  console.log(data);
 
   function toggleClick(id) {
     setData((prevData) =>
@@ -43,17 +44,8 @@ export const StateProvider = ({ children, productList }) => {
     setTotalPrice(total);
   }
 
-  function mergeArray() {
-    setData(data.concat(productList));
-  }
-
   useEffect(() => {
-    if (data.length !== 0) {
-      const isArrayCat = data.every((product) => {
-        return productList[0].cat !== product.cat;
-      });
-      if (isArrayCat) mergeArray();
-    } else {
+    if (data.length === 0) {
       setData(productList);
     }
     controlTotalAmount();

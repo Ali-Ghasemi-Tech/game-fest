@@ -9,6 +9,7 @@ const Product = ({ prop, click, controller }) => {
   function handleClick(e) {
     if (e.target.getAttribute("product-button") === `${prop.id}`) {
       click(prop.id);
+      console.log(prop.id);
     }
   }
   function updateAmount(e) {
