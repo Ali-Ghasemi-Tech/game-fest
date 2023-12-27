@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../style/filter.css";
 import Slider from "./Slider";
 
-const Filter = ({ prop }) => {
+const Filter = ({ prop, sliderValue }) => {
   const [label, setLabel] = useState("all");
   function handleLabel(e) {
     if (e.closest(".sidebar-label")) {
@@ -112,7 +112,7 @@ const Filter = ({ prop }) => {
           <span className="checkbox"></span>
           <span className="text">Console</span>
         </label>
-        <Slider />
+        <Slider value={sliderValue} />
       </div>
     </>
   );

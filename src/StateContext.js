@@ -3,10 +3,9 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 const StateContext = createContext();
 
 export const StateProvider = ({ children, productList }) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(productList);
   const [totalProduct, setTotalProduct] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
-  console.log(data);
 
   function toggleClick(id) {
     setData((prevData) =>
@@ -45,12 +44,9 @@ export const StateProvider = ({ children, productList }) => {
   }
 
   useEffect(() => {
-    if (data.length === 0) {
-      setData(productList);
-    }
     controlTotalAmount();
     controlTotalPrice();
-  }, [productList, data]);
+  }, [data]);
 
   return (
     <StateContext.Provider

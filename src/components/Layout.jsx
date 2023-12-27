@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { useContext } from "react";
 import { StateProvider, useStateContext } from "../StateContext";
 import "../style/layout.css";
 import Product from "./Product";
 import Filter from "./Filter";
 
-const Layout = () => {
+const Layout = ({ cat }) => {
   const { data, toggleClick, controlAmount } = useStateContext();
   const [filterLabel, setFilterLabel] = useState("all");
-  const [list, setList] = useState(data);
+  const [list, setList] = useState([]);
+  const [priceFilter, setPriceFilter] = useState([20000, 600000]);
   const filteredList = data.filter((product) => {
-    return product.cat === filterLabel;
+    if (filterLabel === "all") {
+      return data && filterPrice(product.price, priceFilter[0], priceFilter[1]);
+    }
+    return (
+      product.cat === filterLabel &&
+      filterPrice(product.price, priceFilter[0], priceFilter[1])
+    );
   });
   function handleClick(id) {
     toggleClick(id);
@@ -23,37 +29,42 @@ const Layout = () => {
   function handleFilter(label) {
     setFilterLabel(label);
   }
+  function sliderValue(newValue) {
+    setPriceFilter(newValue);
+  }
+  function filterPrice(price, min, max) {
+    return price >= min && price <= max;
+  }
   useEffect(() => {
-    if (filterLabel === "all") return setList(data);
     setList(filteredList);
-  }, [filterLabel, data]);
+    console.log(filteredList);
+  }, [filterLabel, data, cat, priceFilter]);
   return (
     <>
       <div className="page-layout">
         <div className="product-layout">
-          {list.map((product, index) => {
-            if (filterLabel !== "all") {
-              return product.cat === filterLabel ? (
+          {list.map((product) => {
+            if (product.cat === cat) {
+              return product.cat === cat ? (
                 <Product
-                  key={index}
                   prop={product}
                   click={handleClick}
                   controller={handleControl}
                 />
               ) : null;
             }
-            return (
-              <Product
-                key={index}
-                prop={product}
-                click={handleClick}
-                controller={handleControl}
-              />
-            );
+            if (cat === "all")
+              return (
+                <Product
+                  prop={product}
+                  click={handleClick}
+                  controller={handleControl}
+                />
+              );
           })}
         </div>
         <div className="filter-container">
-          <Filter prop={handleFilter} />
+          <Filter sliderValue={sliderValue} prop={handleFilter} />
         </div>
       </div>
     </>

@@ -8,12 +8,8 @@ import steamProducts from "./products-object/steamProducts";
 import originProducts from "./products-object/originProducts";
 
 function App() {
-  const [productList, setProductList] = useState([]);
   const [allList, setAllList] = useState(steamProducts.concat(originProducts));
-  console.log("app runs repeat");
-  function setList(list) {
-    setProductList(list);
-  }
+  const [productList, setProductList] = useState(allList);
 
   return (
     <StateProvider productList={productList}>
@@ -21,22 +17,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Navbar />}>
             <Route path="/cart" element={<Cart />} />
-            <Route
-              path="/home"
-              element={<Home selectList={setList} object={allList} />}
-            />
+            <Route path="/home" element={<Home cat="all" />} />
             <Route path="/gift-cards">
               <Route path="pc">
-                <Route
-                  path="steam"
-                  element={<Home selectList={setList} object={steamProducts} />}
-                />
-                <Route
-                  path="origin"
-                  element={
-                    <Home selectList={setList} object={originProducts} />
-                  }
-                />
+                <Route path="steam" element={<Home cat="steam" />} />
+                <Route path="origin" element={<Home cat="origin" />} />
               </Route>
               <Route path="console" element={<Home />}>
                 <Route path="playstation" element={<Home />} />
