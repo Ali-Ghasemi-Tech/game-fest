@@ -2,25 +2,28 @@ import React, { useEffect, useState } from "react";
 import "../style/filter.css";
 import Slider from "./Slider";
 
-const Filter = () => {
+const Filter = ({ prop }) => {
   const [label, setLabel] = useState("all");
   console.log(label);
-  function handleFilter(e) {
-    const labelElement = e.closest(".sidebar-label");
-    const textElement = labelElement.querySelector(".text");
-    const filterText = textElement.innerText.toLowerCase();
-    setLabel(filterText);
+  function handleLabel(e) {
+    if (e.closest(".sidebar-label")) {
+      const labelElement = e.closest(".sidebar-label");
+      const textElement = labelElement.querySelector(".text");
+      const filterText = textElement.innerText.toLowerCase();
+      setLabel(filterText);
+    }
   }
   useEffect(() => {
     const clickCheck = document.querySelectorAll(".filter-content");
     clickCheck.forEach((element) => {
-      element.addEventListener("click", (e) => handleFilter(e.target));
+      element.addEventListener("click", (e) => handleLabel(e.target));
     });
+    prop(label);
 
     return clickCheck.forEach((element) => {
-      element.removeEventListener("click", (e) => handleFilter(e.target));
+      element.removeEventListener("click", (e) => handleLabel(e.target));
     });
-  }, []);
+  }, [label]);
   return (
     <>
       {/*  */}

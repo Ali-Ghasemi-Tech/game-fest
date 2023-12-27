@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Layout from "./pages/Layout";
 import Cart from "./pages/Cart";
 import Navbar from "./components/Navbar";
 import { StateProvider } from "./StateContext";
