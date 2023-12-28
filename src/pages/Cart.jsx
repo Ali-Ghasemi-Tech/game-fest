@@ -13,11 +13,13 @@ const Cart = () => {
       {data.map((product, index) => (
         <div key={index} className={product.amount === 0 ? "hide" : "cart"}>
           <div className="cart-left">
-            <img src={product.img} alt={product.name} />
+            <div className="cart-img-container">
+              <img src={product.img} alt={product.name} />
+            </div>
             <div className="cart-info">
-              <span>{product.name}</span>
+              <span className="cart-product-name">{product.name}</span>
               <span>
-                <b>{product.price.toLocaleString()} T</b> (per gift card)
+                <b>{product.price.toLocaleString()} T</b> (per 1 product)
               </span>
             </div>
           </div>

@@ -7,15 +7,19 @@ import Filter from "./Filter";
 const Layout = ({ cat }) => {
   const { data, toggleClick, controlAmount } = useStateContext();
   const [filterLabel, setFilterLabel] = useState("all");
+  const [filterSection, setFilterSection] = useState("all");
+  const [filterPlatform, setFilterPlatform] = useState("all");
   const [list, setList] = useState([]);
   const [priceFilter, setPriceFilter] = useState([20000, 600000]);
   const filteredList = data.filter((product) => {
     if (filterLabel === "all") {
-      return data && filterPrice(product.price, priceFilter[0], priceFilter[1]);
+      return filterPrice(product.price, priceFilter[0], priceFilter[1]);
     }
     return (
-      product.cat === filterLabel &&
-      filterPrice(product.price, priceFilter[0], priceFilter[1])
+      (product.section === filterLabel &&
+        filterPrice(product.price, priceFilter[0], priceFilter[1])) ||
+      (product.cat === filterLabel &&
+        filterPrice(product.price, priceFilter[0], priceFilter[1]))
     );
   });
   function handleClick(id) {
@@ -26,8 +30,10 @@ const Layout = ({ cat }) => {
       ? controlAmount(id, false, 0)
       : controlAmount(id, true, newAmount);
   }
-  function handleFilter(label) {
+  function handleFilter(label, section, platform) {
     setFilterLabel(label);
+    setFilterSection(section);
+    setFilterPlatform(platform);
   }
   function sliderValue(newValue) {
     setPriceFilter(newValue);

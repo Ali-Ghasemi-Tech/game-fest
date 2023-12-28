@@ -1,0 +1,36 @@
+const consoleStandProduct = [
+  {
+    img: "https://m.media-amazon.com/images/I/61GMUzJ3uiL._AA720_AC_FMwebp_QL65_.jpg",
+    name: "Cooling Fan Game Console for PS5, Quiet USB External Cooler Stand, Professional Efficient Cooling System for PS5 Game Console",
+    price: 1500000,
+    id: "consoleStand-playstation",
+    cat: "consoleStand",
+    isClicked: false,
+    amount: 0,
+    section: "accessory",
+    platform: "console",
+  },
+  {
+    img: "https://m.media-amazon.com/images/I/51ymhmw0JzL._AA720_AC_FMwebp_QL65_.jpg",
+    name: "Mcbazel Horizontal Stand Compatible with PS5 DE/UHD Console, Basic Stand Holder for PS5 Disk and Digital Edition Console, with Non-Slip Pads - Black(Not for PS5 Slim)",
+    price: 1500000,
+    id: "consoleStand-horizontal",
+    cat: "consoleStand",
+    isClicked: false,
+    amount: 0,
+    section: "accessory",
+    platform: "console",
+  },
+  {
+    img: "https://m.media-amazon.com/images/I/51g+Ti09BrL._AA720_AC_FMwebp_QL65_.jpg",
+    name: "iMP DLX Cool and Charge Multi-Function Console Stand PS5",
+    price: 1500000,
+    id: "consoleStand-DLX",
+    cat: "consoleStand",
+    isClicked: false,
+    amount: 0,
+    section: "accessory",
+    platform: "console",
+  },
+];
+export default consoleStandProduct;

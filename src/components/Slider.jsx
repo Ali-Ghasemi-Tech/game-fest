@@ -4,7 +4,7 @@ import "../style/slider.css";
 
 const Slider = ({ value }) => {
   const min = 20000;
-  const max = 600000;
+  const max = 5000000;
   const [values, setValues] = useState([min, max]);
 
   function handleChange(newValue) {
@@ -20,6 +20,14 @@ const Slider = ({ value }) => {
       setValues([values[0], e.target.value]);
     });
     value(values);
+    return (
+      document.getElementById("min").removeEventListener("input", (e) => {
+        setValues([e.target.value, values[1]]);
+      }),
+      document.getElementById("max").removeEventListener("input", (e) => {
+        setValues([values[0], e.target.value]);
+      })
+    );
   }, [values]);
 
   return (

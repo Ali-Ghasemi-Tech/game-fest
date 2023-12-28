@@ -36,36 +36,40 @@ const Product = ({ prop, click, controller }) => {
 
   return (
     <div className="product-container">
-      <img src={prop.img} alt="" />
-      <span>{prop.name}</span>
-      <div>
-        <span>{prop.price.toLocaleString()} T</span>
+      <div className="img-container">
+        <img src={prop.img} alt="" />
       </div>
-      <div>
-        <button
-          product-button={prop.id}
-          className={`${prop.isClicked ? "hide" : "add-button"}`}
-        >
-          Add to cart
-        </button>
-        <div
-          className={`${prop.isClicked ? "product-amount-control" : "hide"}`}
-        >
-          <button id="plus" product-button={prop.id + "-controller"}>
-            <Plus
-              product-button={prop.id + "-controller"}
-              className="controller-button"
-              id="plus"
-            />
+      <div className="description">
+        <span className="product-name">{prop.name}</span>
+        <div>
+          <span>{prop.price.toLocaleString()} T</span>
+        </div>
+        <div>
+          <button
+            product-button={prop.id}
+            className={`${prop.isClicked ? "hide" : "add-button"}`}
+          >
+            Add to cart
           </button>
-          <span>{prop.amount}</span>
-          <button id="minus" product-button={prop.id + "-controller"}>
-            <Minus
-              product-button={prop.id + "-controller"}
-              className="controller-button"
-              id="minus"
-            />
-          </button>
+          <div
+            className={`${prop.isClicked ? "product-amount-control" : "hide"}`}
+          >
+            <button id="plus" product-button={prop.id + "-controller"}>
+              <Plus
+                product-button={prop.id + "-controller"}
+                className="controller-button"
+                id="plus"
+              />
+            </button>
+            <span>{prop.amount}</span>
+            <button id="minus" product-button={prop.id + "-controller"}>
+              <Minus
+                product-button={prop.id + "-controller"}
+                className="controller-button"
+                id="minus"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </div>

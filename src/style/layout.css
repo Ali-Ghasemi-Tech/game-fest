@@ -9,9 +9,9 @@
 .product-layout {
   direction: rtl;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 16vw);
   grid-auto-rows: 1fr;
-  gap: 3vw;
+  gap: 2vw;
   margin-left: 5vw;
 }
 .filter-container {

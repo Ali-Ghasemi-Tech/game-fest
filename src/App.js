@@ -6,10 +6,29 @@ import Navbar from "./components/Navbar";
 import { StateProvider } from "./StateContext";
 import steamProducts from "./products-object/steamProducts";
 import originProducts from "./products-object/originProducts";
+import keyboardProduct from "./products-object/keyboardProducts";
+import playstationProducts from "./products-object/playstationProducts";
+import xboxProducts from "./products-object/xboxProducts";
+import nintendoProducts from "./products-object/nintendoProducts";
+import mouseProduct from "./products-object/mouseProducts";
+import controllerCoverProduct from "./products-object/controllercoverProduct";
+import consoleStandProduct from "./products-object/consoleStandProduct";
 
 function App() {
-  const [allList, setAllList] = useState(steamProducts.concat(originProducts));
-  const [productList, setProductList] = useState(allList);
+  const [allList, setAllList] = useState(
+    steamProducts.concat(
+      originProducts,
+      playstationProducts,
+      xboxProducts,
+      nintendoProducts,
+      keyboardProduct,
+      mouseProduct,
+      controllerCoverProduct,
+      consoleStandProduct
+    )
+  );
+  console.log(allList);
+  const [productList] = useState(allList);
 
   return (
     <StateProvider productList={productList}>
@@ -24,15 +43,18 @@ function App() {
                 <Route path="origin" element={<Home cat="origin" />} />
               </Route>
               <Route path="console" element={<Home />}>
-                <Route path="playstation" element={<Home />} />
-                <Route path="xbox" element={<Home />} />
-                <Route path="nintendo" element={<Home />} />
+                <Route
+                  path="playstation"
+                  element={<Home cat="playstation" />}
+                />
+                <Route path="xbox" element={<Home cat="xbox" />} />
+                <Route path="nintendo" element={<Home cat="nintendo" />} />
               </Route>
             </Route>
             <Route path="/accessories">
-              <Route path="pc" element={<Home />}>
+              <Route path="pc" element={<Home cat="pc" />}>
                 <Route path="mouse" element={<Home />} />
-                <Route path="keyboard" element={<Home />} />
+                <Route path="keyboard" element={<Home cat="keyboard" />} />
               </Route>
               <Route path="console" element={<Home />}>
                 <Route path="controller-cover" element={<Home />} />

@@ -1,0 +1,36 @@
+const mouseProduct = [
+  {
+    img: "https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_UL320_.jpg",
+    name: "Logitech G502 HERO High Performance Gaming Mouse, HERO 25K sensor, 25,600 DPI, RGB, Adjustable Weights, 11 Programmable Buttons, on-board memory, PC/Mac - Black",
+    price: 1500000,
+    id: "mouse-logitech-hero",
+    cat: "mouse",
+    isClicked: false,
+    amount: 0,
+    section: "accessory",
+    platform: "pc",
+  },
+  {
+    img: "https://m.media-amazon.com/images/I/61ni3t1ryQL._AC_UL320_.jpg",
+    name: "Logitech MX Master 3S - High-end wireless mouse, ultra-fast scrolling, Ergo, 8K DPI, tracking on glass, silent clicks, USB C, Bluetooth, Windows, Linux, Chrome - black/graphite",
+    price: 1500000,
+    id: "mouse-logitech-mx",
+    cat: "mouse",
+    isClicked: false,
+    amount: 0,
+    section: "accessory",
+    platform: "pc",
+  },
+  {
+    img: "https://m.media-amazon.com/images/I/61hzuoXwjqL._AC_UL320_.jpg",
+    name: "Logitech B100 USB Mouse, 3 Buttons, Optical Tracking, Left and Right Handed, PC/Mac/Laptop - Black",
+    price: 1500000,
+    id: "mouse-logitech-b100",
+    cat: "mouse",
+    isClicked: false,
+    amount: 0,
+    section: "accessory",
+    platform: "pc",
+  },
+];
+export default mouseProduct;

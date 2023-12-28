@@ -7,15 +7,19 @@ export const steamProducts = [
     cat: "steam",
     isClicked: false,
     amount: 0,
+    section: "giftcard",
+    platform: "pc",
   },
   {
     img: "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/815jDkv65fL._SY500_.jpg",
     name: "steam gift card 50$",
-    price: 150000,
+    price: 200000,
     id: "steam-50",
     cat: "steam",
     isClicked: false,
     amount: 0,
+    section: "giftcard",
+    platform: "pc",
   },
   {
     img: "https://m.media-amazon.com/images/I/812IbiG6pUL._AC_SY741_.jpg",
@@ -25,6 +29,8 @@ export const steamProducts = [
     cat: "steam",
     isClicked: false,
     amount: 0,
+    section: "giftcard",
+    platform: "pc",
   },
   {
     img: "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71UeknwToUL._SY500_.jpg",
@@ -34,6 +40,8 @@ export const steamProducts = [
     cat: "steam",
     isClicked: false,
     amount: 0,
+    section: "giftcard",
+    platform: "pc",
   },
 ];
 
