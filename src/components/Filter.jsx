@@ -17,7 +17,9 @@ const Filter = ({ prop, sliderValue }) => {
       const labelElement = e.closest(".sidebar-label");
       const textElement = labelElement.querySelector(".text");
       const filterText = textElement.innerText.toLowerCase();
-      setSection(filterText);
+      if (filterText === "gift cards") setSection("giftcard");
+      else if (filterText === "accessories") setSection("accessory");
+      else setSection("all");
     } else if (e.name === "platform") {
       const labelElement = e.closest(".sidebar-label");
       const textElement = labelElement.querySelector(".text");

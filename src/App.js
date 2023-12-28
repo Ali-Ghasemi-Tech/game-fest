@@ -53,12 +53,18 @@ function App() {
             </Route>
             <Route path="/accessories">
               <Route path="pc" element={<Home cat="pc" />}>
-                <Route path="mouse" element={<Home />} />
+                <Route path="mouse" element={<Home cat="mouse" />} />
                 <Route path="keyboard" element={<Home cat="keyboard" />} />
               </Route>
-              <Route path="console" element={<Home />}>
-                <Route path="controller-cover" element={<Home />} />
-                <Route path="console-stand" element={<Home />} />
+              <Route path="console" element={<Home cat="console" />}>
+                <Route
+                  path="controller-cover"
+                  element={<Home cat="controllerCover" />}
+                />
+                <Route
+                  path="console-stand"
+                  element={<Home cat="consoleStand" />}
+                />
               </Route>
             </Route>
           </Route>

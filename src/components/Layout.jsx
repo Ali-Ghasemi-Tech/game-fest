@@ -10,17 +10,30 @@ const Layout = ({ cat }) => {
   const [filterSection, setFilterSection] = useState("all");
   const [filterPlatform, setFilterPlatform] = useState("all");
   const [list, setList] = useState([]);
-  const [priceFilter, setPriceFilter] = useState([20000, 600000]);
+  const [priceFilter, setPriceFilter] = useState([20000, 5000000]);
   const filteredList = data.filter((product) => {
-    if (filterLabel === "all") {
+    if (
+      filterLabel === "all" &&
+      filterSection === "all" &&
+      filterPlatform === "all"
+    ) {
+      return filterPrice(product.price, priceFilter[0], priceFilter[1]);
+    } else if (
+      product.cat === filterLabel &&
+      filterPlatform === "all" &&
+      filterSection === "all"
+    ) {
+      return filterPrice(product.price, priceFilter[0], priceFilter[1]);
+    } else if (product.section === filterSection && filterPlatform === "all") {
+      return filterPrice(product.price, priceFilter[0], priceFilter[1]);
+    } else if (product.platform === filterPlatform && filterSection === "all") {
+      return filterPrice(product.price, priceFilter[0], priceFilter[1]);
+    } else if (
+      product.section === filterSection &&
+      product.platform === filterPlatform
+    ) {
       return filterPrice(product.price, priceFilter[0], priceFilter[1]);
     }
-    return (
-      (product.section === filterLabel &&
-        filterPrice(product.price, priceFilter[0], priceFilter[1])) ||
-      (product.cat === filterLabel &&
-        filterPrice(product.price, priceFilter[0], priceFilter[1]))
-    );
   });
   function handleClick(id) {
     toggleClick(id);
@@ -44,7 +57,7 @@ const Layout = ({ cat }) => {
   useEffect(() => {
     setList(filteredList);
     console.log(filteredList);
-  }, [filterLabel, data, cat, priceFilter]);
+  }, [filterPlatform, filterSection, filterLabel, data, cat, priceFilter]);
   return (
     <>
       <div className="page-layout">
