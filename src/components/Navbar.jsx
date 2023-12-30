@@ -27,7 +27,7 @@ const Navbar = () => {
               catElement={<AccessoriesCat />}
               category={"accessories"}
             />
-            <a href="">Contact us</a>
+            <Link to="/contact">Contact us</Link>
           </div>
         </div>
         <div id="nav-left">

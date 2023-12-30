@@ -3,6 +3,7 @@ import { BrowserRouter, Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Navbar from "./components/Navbar";
+import Contact from "./pages/Contact";
 import { StateProvider } from "./StateContext";
 import steamProducts from "./products-object/steamProducts";
 import originProducts from "./products-object/originProducts";
@@ -35,6 +36,7 @@ function App() {
       <BrowserRouter basename="game-fest">
         <Routes>
           <Route path="/" element={<Navbar />}>
+            <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/home" element={<Home cat="all" />} />
             <Route path="/gift-cards">
@@ -59,11 +61,11 @@ function App() {
               <Route path="console" element={<Home cat="console" />}>
                 <Route
                   path="controller-cover"
-                  element={<Home cat="controllerCover" />}
+                  element={<Home cat="controller cover" />}
                 />
                 <Route
                   path="console-stand"
-                  element={<Home cat="consoleStand" />}
+                  element={<Home cat="console stand" />}
                 />
               </Route>
             </Route>

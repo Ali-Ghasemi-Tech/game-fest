@@ -7,7 +7,7 @@ import { useStateContext } from "../StateContext";
 const Product = ({ prop, click, controller }) => {
   const { toggleClick } = useStateContext();
   function handleClick(e) {
-    if (e.target.getAttribute("product-button") === `${prop.id}`) {
+    if (e.target.getAttribute("product-button") === prop.id) {
       click(prop.id);
       console.log(prop.id);
     }

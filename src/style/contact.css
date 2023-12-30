@@ -1,0 +1,46 @@
+.contact-container {
+  margin-top: 6vw;
+  margin-left: 3vw;
+  display: flex;
+
+  width: auto;
+  flex-direction: column;
+  row-gap: 1vw;
+}
+.contact-container form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1vw;
+  max-width: 30vw;
+}
+#name {
+  max-width: 20vw;
+  height: 1.5vw;
+  padding: 0.2vw 0.5vw;
+}
+#suggestion {
+  max-width: 30vw;
+  height: 10vw;
+  padding: 0.5vw;
+
+  justify-content: start;
+  align-items: start;
+}
+#submit {
+  border-radius: 0.5vw;
+  border: none;
+  padding: 0.5vw 1vw;
+  color: white;
+  background-color: rgb(64, 133, 223);
+  font-size: clamp(0.6rem, 1vw, 1.5rem);
+  transform: translateX(0);
+  opacity: 1;
+  box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.1s ease-in-out;
+}
+
+#submit:hover {
+  color: rgb(64, 133, 223);
+  background-color: white;
+  cursor: pointer;
+}

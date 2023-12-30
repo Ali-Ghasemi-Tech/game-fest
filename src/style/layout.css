@@ -9,14 +9,15 @@
 .product-layout {
   direction: rtl;
   display: grid;
-  grid-template-columns: repeat(4, 16vw);
+  grid-template-columns: repeat(5, 12vw);
   grid-auto-rows: 1fr;
   gap: 2vw;
   margin-left: 5vw;
 }
 .filter-container {
   width: 80%;
-  height: 200%;
+  position: sticky;
+  top: 5vw;
   background-color: rgb(241, 241, 241);
   padding: 1vw;
   border: 0.1vw solid black;

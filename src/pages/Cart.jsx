@@ -4,9 +4,10 @@ import { ReactComponent as Minus } from "../media/minus.svg";
 import "../style/cart.css";
 import "../style/product.css";
 import { useStateContext } from "../StateContext";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { data, controlAmount, totalPrice } = useStateContext();
+  const { data, controlAmount, totalPrice, totalProduct } = useStateContext();
 
   return (
     <div className="cart-page">
@@ -60,9 +61,19 @@ const Cart = () => {
           </div>
         </div>
       ))}
+      <div className={totalProduct === 0 ? "empty-cart" : "hide"}>
+        <span>you have no products in your cart </span>
+        <Link to="/home">
+          <button className="add-button">Shop</button>
+        </Link>
+      </div>
       <div className={totalPrice === 0 ? "hide" : "price-section"}>
         <span>Total Price:</span>
-        <span>{totalPrice.toLocaleString()}</span>
+        <span>{totalPrice.toLocaleString()} T</span>
+      </div>
+      <div className={totalProduct === 0 ? "hide" : "price-section"}>
+        <span>Number of products:</span>
+        <span>{totalProduct}</span>
       </div>
     </div>
   );

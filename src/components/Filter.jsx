@@ -44,7 +44,12 @@ const Filter = ({ prop, sliderValue }) => {
       <div className="filter-content">
         <h2>Category</h2>
         <label className="sidebar-label">
-          <input type="radio" className="input" name="category" />
+          <input
+            id="category-all"
+            type="radio"
+            className="input"
+            name="category"
+          />
           <span className="checkbox"></span>
           <span className="text">All</span>
         </label>
