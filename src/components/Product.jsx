@@ -32,7 +32,7 @@ const Product = ({ prop, click, controller }) => {
       document.removeEventListener("click", handleClick);
       document.removeEventListener("click", updateAmount);
     };
-  }, [prop.amount, toggleClick]);
+  }, [prop, toggleClick]);
 
   return (
     <div className="product-container">

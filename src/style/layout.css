@@ -16,8 +16,6 @@
 }
 .filter-container {
   width: 80%;
-  position: sticky;
-  top: 5vw;
   background-color: rgb(241, 241, 241);
   padding: 1vw;
   border: 0.1vw solid black;

@@ -18,7 +18,7 @@ const Navbar = () => {
     <>
       <div id="navbar" className="">
         <div id="nav-right">
-          <Link to="/home" id="shop-title">
+          <Link to="/shop" id="shop-title">
             Game Fest Shop
           </Link>
           <div id="link-list">
