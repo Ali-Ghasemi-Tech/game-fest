@@ -28,7 +28,6 @@ function App() {
     consoleStandProduct
   );
 
-  console.log(allList);
   const [productList] = useState(allList);
 
   return (
