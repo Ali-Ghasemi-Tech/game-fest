@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/game-fest/static/css/main.af66dc0f.css",
+    "main.js": "/game-fest/static/js/main.63b1c5dd.js",
+    "static/js/787.37eddccb.chunk.js": "/game-fest/static/js/787.37eddccb.chunk.js",
+    "static/media/index.cjs": "/game-fest/static/media/index.671993152dc0f6e0b17a.cjs",
+    "index.html": "/game-fest/index.html",
+    "static/media/cart.svg": "/game-fest/static/media/cart.ca1b3bf90006e9993f3563b32b220931.svg",
+    "static/media/plus.svg": "/game-fest/static/media/plus.5458bc45e21e63c0f8709a0cdde57caf.svg",
+    "static/media/minus.svg": "/game-fest/static/media/minus.4d4357286cac7594adfab1926674bd7d.svg",
+    "main.af66dc0f.css.map": "/game-fest/static/css/main.af66dc0f.css.map",
+    "main.63b1c5dd.js.map": "/game-fest/static/js/main.63b1c5dd.js.map",
+    "787.37eddccb.chunk.js.map": "/game-fest/static/js/787.37eddccb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af66dc0f.css",
+    "static/js/main.63b1c5dd.js"
+  ]
+}
