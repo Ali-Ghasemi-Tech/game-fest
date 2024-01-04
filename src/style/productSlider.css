@@ -1,0 +1,21 @@
+.product-slider {
+  width: 50%;
+  direction: rtl;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+.carousel {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2vw;
+}
+.react-multi-carousel-item {
+  width: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
